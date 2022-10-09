@@ -23,6 +23,11 @@ function boxClicked(e) {
         if(playerHasWon() !==false){
             playerText.innerHTML = `${currentPlayer} has won!`
             let winning_blocks = playerHasWon()
+            if (currentPlayer == X_TEXT){
+            playerText.innerHTML = "X Player has won!";
+         }else{
+            playerText.innerHTML = "O Player has won!";
+         }
 
             winning_blocks.map( box => boxes[box].style.backgroundColor=winnerIndicator)
             return
@@ -64,7 +69,7 @@ function restart() {
         box.style.backgroundColor=''
     })
 
-    playerText.innerHTML = 'Tic Tac Toe'
+   playerText.innerHTML = "Tic Tie Toe";
 
     currentPlayer = X_TEXT
 }
